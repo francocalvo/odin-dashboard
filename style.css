@@ -1,0 +1,88 @@
+body {
+  display: grid;
+  grid-template-columns: minmax(300px, 1fr) 5fr;
+  grid-template-areas: "sidebar main";
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bolder;
+}
+
+ul,
+li {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+nav {
+  grid-area: sidebar;
+  display: grid;
+  align-items: center;
+  align-content: flex-start;
+  grid-template-columns: 80px minmax(150px, 1fr);
+  grid-template-areas:
+    "icon title"
+    "options options"
+    "misc misc";
+  background-color: #1992d4;
+  color: white;
+  padding-left: 16px;
+  padding-top: 16px;
+  row-gap: 50px;
+}
+
+nav > h1 {
+  grid-area: title;
+}
+
+nav > img:first-of-type {
+  grid-area: icon;
+  justify-self: center;
+  height: 60px;
+  width: 60px;
+}
+
+nav > .options {
+  grid-area: options;
+}
+
+nav > .misc {
+  grid-area: misc;
+}
+
+nav > ul > li > svg {
+  justify-self: center;
+  height: 30px;
+  width: 30px;
+}
+
+nav > ul > li {
+  display: grid;
+  grid-template-columns: 80px minmax(150px, 1fr);
+  align-items: center;
+  font-size: 24px;
+  font-weight: bolder;
+  padding-bottom: 16px;
+}
+
+.logo > h1:first-of-type {
+  grid-area: text;
+}
+
+.main {
+  grid-area: main;
+  grid-template-rows: ;
+}
