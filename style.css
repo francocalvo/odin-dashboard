@@ -84,5 +84,76 @@ nav > ul > li {
 
 .main {
   grid-area: main;
-  grid-template-rows: ;
+  display: grid;
+  grid-template-rows: 220px 1fr;
+  grid-template-areas: "header" "pane";
+}
+
+header {
+  grid-area: header;
+  display: grid;
+  align-items: start;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 100px 100px;
+  grid-template-areas: "search profile" "hero menu";
+  padding: 18px;
+  padding-left: 36px;
+}
+
+form {
+  grid-area: search;
+  margin: 0;
+  padding: 0;
+}
+
+form > button {
+  border-style: none;
+  background-color: transparent;
+}
+
+.profile {
+  grid-area: profile;
+}
+
+.hero {
+  grid-area: hero;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.hero > img {
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.msg {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  margin: 0;
+}
+
+.hero > .msg > p:first-of-type {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.hero > .msg > p:last-of-type {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 0;
+}
+
+menu {
+  grid-area: menu;
+}
+
+.pane {
+  grid-area: pane;
+  background-color: #e2e8f0;
 }
