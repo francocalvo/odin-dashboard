@@ -8,11 +8,13 @@ body {
   height: 100vh;
 }
 
+p,
 h1,
 h2,
 h3,
 h4 {
   margin: 0;
+  padding: 0;
 }
 
 h1 {
@@ -107,7 +109,7 @@ nav > ul > li {
 .main {
   grid-area: main;
   display: grid;
-  grid-template-rows: 220px 1fr;
+  grid-template-rows: 180px 1fr;
   grid-template-areas: "header" "pane";
 }
 
@@ -116,7 +118,7 @@ header {
   display: grid;
   align-items: start;
   grid-template-columns: 2fr 1fr;
-  grid-template-rows: 100px 100px;
+  grid-template-rows: 1fr 1fr;
   grid-template-areas: "search profile" "hero menu";
   padding: 18px;
   padding-left: 80px;
@@ -365,6 +367,8 @@ menu > button {
   display: grid;
   grid-template-columns: 1fr 4fr;
   grid-template-areas: "avatar msg";
+  align-items: center;
+  column-gap: 16px;
 }
 
 .trending > .container > .trend-card > img {
@@ -373,4 +377,12 @@ menu > button {
   height: 75px;
   overflow: hidden;
   border-radius: 50%;
+}
+
+.trending > .container > .trend-card > .msg > p:first-of-type {
+  font-weight: bolder;
+}
+
+.trending > .container > .trend-card > .msg > p:last-of-type {
+  color: dimgray
 }
