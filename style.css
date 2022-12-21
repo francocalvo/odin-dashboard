@@ -1,6 +1,6 @@
 body {
   display: grid;
-  grid-template-columns: minmax(300px, 1fr) 5fr;
+  grid-template-columns: minmax(400px, 1fr) 5fr;
   grid-template-areas: "sidebar main";
   font-family: "Roboto", sans-serif;
   margin: 0;
@@ -20,11 +20,33 @@ h1 {
   font-weight: bolder;
 }
 
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
 ul,
 li {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+button,
+button > * {
+  transition: all 0.2s ease-in-out;
+}
+
+button:hover,
+button > *:hover {
+  filter: brightness(110%);
+  transition: all 0.2s ease-in-out;
+}
+
+button:active,
+button > *:active {
+  filter: brightness(90%);
+  transition: all 0.2s ease-in-out;
 }
 
 nav {
@@ -97,7 +119,8 @@ header {
   grid-template-rows: 100px 100px;
   grid-template-areas: "search profile" "hero menu";
   padding: 18px;
-  padding-left: 36px;
+  padding-left: 80px;
+  justify-content: space-between;
 }
 
 form {
@@ -149,11 +172,205 @@ form > button {
   margin: 0;
 }
 
+form {
+  grid-area: search;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+form > input {
+  width: clamp(200px, 700px, 80%);
+  height: 35px;
+  background-color: #e2e8f0;
+  border-radius: 20px;
+  border: 0px solid transparent;
+  box-sizing: border-box;
+  padding-left: 20px;
+}
+
+form > button > img {
+  width: 30px;
+  height: 30px;
+}
+
 menu {
   grid-area: menu;
+}
+
+.profile {
+  grid-area: profile;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 60px;
+  gap: 30px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+.profile > button {
+  border-style: none;
+  background-color: transparent;
+}
+
+.profile > button > .btn-notif {
+  width: 26px;
+  height: 26px;
+}
+
+.profile > button > .btn-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+menu {
+  grid-area: menu;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 60px;
+  gap: 25px;
+}
+
+menu > button {
+  background-color: #1992d4;
+  color: white;
+  font-weight: bold;
+  padding: 10px 30px;
+  border-radius: 20px;
+  border: 0px solid transparent;
 }
 
 .pane {
   grid-area: pane;
   background-color: #e2e8f0;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-template-areas: "cards side-pane";
+  padding: 30px;
+  gap: 30px;
+}
+
+.proyects {
+  grid-area: cards;
+}
+
+.proyects > h2 {
+  padding-bottom: 16px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+.cards > .card {
+  width: 100%;
+  height: 250px;
+  background-color: white;
+  padding: 30px 16px 40px 30px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 3px 3px 4px gray;
+  border-left: 10px solid orange;
+}
+
+.cards > .card > .text {
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.cards > .card > .text > p {
+  margin: 0;
+  height: 60%;
+  overflow: hidden;
+  color: dimgray;
+}
+
+.cards > .card > .icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  padding-right: 20px;
+  color: dimgray;
+  gap: 30px;
+}
+
+.side-pane {
+  grid-area: side-pane;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.trending > h2,
+.announcements > h2 {
+  padding-bottom: 16px;
+}
+
+.trending > .container,
+.announcements > .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  padding: 30px 16px 40px 30px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 3px 3px 4px gray;
+  gap: 15px;
+}
+
+.announcements > .container > hr {
+  color: lightgray;
+  opacity: 50%;
+  size: 1px;
+  width: 80%;
+}
+
+.announcements > .container > .item > p {
+  color: dimgrey;
+  margin: 0;
+  padding: 0;
+}
+
+.trending {
+  grid-area: trending;
+}
+
+.trending > h2,
+.announcements > h2 {
+  padding-bottom: 16px;
+}
+
+.trending > .container,
+.announcements > .container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  padding: 30px 16px 40px 30px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  box-shadow: 3px 3px 4px gray;
+  gap: 15px;
+}
+
+.trending > .container > .trend-card {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-template-areas: "avatar msg";
+}
+
+.trending > .container > .trend-card > img {
+  grid-area: avatar;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  border-radius: 50%;
 }
